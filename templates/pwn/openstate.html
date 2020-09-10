@@ -1,0 +1,24 @@
+
+{% extends 'pwn/welcome.html' %}
+
+{% block admin_welcome %}
+    {% load static %}
+    <form method="post" action="{% url 'saveState' %}">
+            {% csrf_token %}
+        <table align="center" >
+
+        <tr>
+            <th>State Name:</th>
+            <th>{{ data.name }}</th>
+
+            <th>Photo:</th>
+            <th>{{ data.photo }}</th>
+
+            <th><button type="button" style="background-color: lime;border-radius: 10px">Save</button> </th>
+            </tr>
+
+            </table>
+
+</form>
+
+{% endblock %}
